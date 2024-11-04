@@ -21,6 +21,7 @@ Route::apiResource('transacoes', TransacaoFinanceiraController::class);
 Route::put('/transacoes/{id}', [TransacaoFinanceiraController::class, 'update']);
 Route::delete('/transacoes/{id}', [TransacaoFinanceiraController::class, 'destroy']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+ */

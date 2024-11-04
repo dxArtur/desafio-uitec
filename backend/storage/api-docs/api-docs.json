@@ -1,0 +1,235 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Transações Financeiras",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/transacoes": {
+            "get": {
+                "tags": [
+                    "Transações"
+                ],
+                "summary": "Lista todas as transações",
+                "operationId": "b848d7d6f99c28839af8ad22cefb0c8a",
+                "responses": {
+                    "200": {
+                        "description": "Lista de transações retornada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Transacao"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Transações"
+                ],
+                "summary": "Cria uma nova transação",
+                "operationId": "819cf90b191edf96297c0dc86ecfd918",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Transacao"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Transação criada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Transacao"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            }
+        },
+        "/transacoes/{id}": {
+            "get": {
+                "tags": [
+                    "Transações"
+                ],
+                "summary": "Exibe uma transação específica",
+                "operationId": "a3507e680ce2f7d9a775ff4b8c48120c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Transação retornada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Transacao"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Transação não encontrada"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Transações"
+                ],
+                "summary": "Atualiza uma transação existente",
+                "operationId": "e56c141124f12e1d19fd06e843612a2a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Transacao"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Transação atualizada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Transacao"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Transação não encontrada"
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Transações"
+                ],
+                "summary": "Remove uma transação existente",
+                "operationId": "f6462e4919a352be284e885676957134",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Transação excluída com sucesso"
+                    },
+                    "404": {
+                        "description": "Transação não encontrada"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Transacao": {
+                "required": [
+                    "descricao",
+                    "valor",
+                    "tipo_transacao_id"
+                ],
+                "properties": {
+                    "descricao": {
+                        "type": "string",
+                        "example": "Pagamento de água"
+                    },
+                    "valor": {
+                        "type": "number",
+                        "format": "float",
+                        "example": 150
+                    },
+                    "tipo_transacao_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "TipoTransacaoFinanceira": {
+                "description": "Os tipos de transação financeira já estão seedados no banco de dados. Não é necessário criar novos tipos.",
+                "required": [
+                    "tipo"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "tipo": {
+                        "type": "string",
+                        "example": "Receita"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-01-01T12:00:00Z"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2024-01-02T12:00:00Z"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Transações",
+            "description": "Transações"
+        }
+    ]
+}

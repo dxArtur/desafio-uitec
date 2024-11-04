@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
 
 
-Route::post('/transacao-financeira', function () {
-    return view('welcome');
+Route::get('/docs/api-docs.json', function () {
+    return response()->file(public_path('swagger.json'));
 });
+
+Route::get('/transacoes', [TransacaoFinanceiraController::class, 'index']);
+Route::post('/transacoes', [TransacaoFinanceiraController::class, 'store']);
+Route::get('/transacoes/{id}', [TransacaoFinanceiraController::class, 'show']);
+Route::put('/transacoes/{id}', [TransacaoFinanceiraController::class, 'update']);
+Route::delete('/transacoes/{id}', [TransacaoFinanceiraController::class, 'destroy']); */
