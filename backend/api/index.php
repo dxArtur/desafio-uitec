@@ -1,3 +1,4 @@
 <?php
+header("Content-Type: application/json");
 
-require __DIR__ . "/../public/index.php"
+echo json_encode(['message' => 'API está funcionando!']);
