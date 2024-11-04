@@ -51,7 +51,6 @@ Laragon é um ambiente de desenvolvimento leve e rápido para aplicações PHP. 
    - Execute o arquivo `laragon-wamp` para iniciar o Laragon.
 
 3. **Após instalar e abrir**:
-   ##setup do projeto
    - Clique em root.
    - copie e cole o arquivo deste repositório.
    - volte para o laragon, abra o terminal e digite:
