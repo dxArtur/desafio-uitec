@@ -1,0 +1,20 @@
+<div class="modal">
+    <div class="modal-content">
+      <h2>Editar Transação</h2>
+      
+      <label for="descricao">Descrição atual:</label>
+      <input type="text" [(ngModel)]="transacao.descricao" id="descricao" required>
+  
+      <label for="valor">Valor atual:</label>
+      <input type="number" [(ngModel)]="transacao.valor" id="valor" required>
+  
+      <label for="tipo">Tipo atual:</label>
+      <select [(ngModel)]="transacao.tipo_transacao_id" id="tipo" required>
+        <option value="1">Receita</option>
+        <option value="2">Despesa</option>
+      </select>
+  
+      <button (click)="editarTransacao()">Atualizar</button>
+      <button (click)="fecharModal()">Cancelar</button>
+    </div>
+  </div>

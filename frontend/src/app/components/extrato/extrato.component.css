@@ -1,0 +1,117 @@
+.extrato {
+    padding: 20px;
+    max-width: 600px; 
+    margin: 15px auto;
+    height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .card-top {
+    display:  flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .filtrar-transacoes {
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  input[type="text"], select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group label {
+    margin-right: 10px;
+  }
+
+  .legenda {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #858585;
+    border-radius: 8px;
+  }
+  .container {
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  .extrato-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove o espaço entre as células */
+  }
+  
+  .extrato-table th {
+    color: rgb(105, 105, 105);
+  }
+  .extrato-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .extrato-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .column-value  {
+    font-weight: 500;
+  }
+
+  .column-description {
+    font-weight: 500;
+  }
+  
+  .column-date  {
+    font-style: italic;
+    color:#a8a8a8;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .column-actions button{
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+
+  .receita {
+    color: green; /* Receitas em verde */
+  }
+  
+  .despesa {
+    color: red; /* Despesas em vermelho */
+  }
+
+  .todos {
+    color: #001F3F
+  }
+
+  button {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-weight: 700;
+    color: #858585;
+  }
+
+
+  
+  @media (max-width: 768px) {
+    .card-top {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        align-items: flex-start; /* Alinha itens à esquerda */
+    }
+
+    .filtrar-transacoes {
+        margin-top: 10px; /* Espaçamento adicional no topo para melhorar a aparência */
+    }
+
+    .extrato-table th, .extrato-table td {
+        font-size: 14px; /* Ajuste de tamanho de fonte para telas pequenas */
+    }
+  }

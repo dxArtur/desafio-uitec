@@ -1,0 +1,63 @@
+<div class="extrato">
+
+  <div class="card-top">
+    <div class="legenda">
+    <div>
+      <strong><span class="receita">Receitas</span></strong>
+    </div>
+    <div>
+      <strong><span class="despesa">Despesas</span></strong>
+    </div>
+    </div>
+
+    <div class="filtro">
+    <div class="filtrar-transacoes">
+      <strong>Filtrar Transações:</strong>
+  
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" name="tipo" [(ngModel)]="filtro" (change)="filtrarTransacoes()">
+        <option value="todas">Todos</option>
+        <option value="receitas">Receitas</option>
+        <option value="despesas">Despesas</option>
+      </select>
+    </div>
+    </div>
+    </div>
+  </div>
+
+ 
+
+  <div class="container">
+    <table class="extrato-table">
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transacao of transacoesFiltradas" [ngClass]="{'receita': transacao.tipo_transacao_id === 1, 'despesa': transacao.tipo_transacao_id === 2}">
+          <td class="column-description">{{ transacao.descricao }}</td>
+          <td class="column-date">{{ transacao.updated_at | date:'dd/MM/yyyy' }}</td>
+          <td class="column-value">
+            R$ {{ transacao.tipo_transacao_id === 2 ? '-' : '+' }} {{ (transacao.valor | number:'1.2-2')!.replace('.', ',') }}
+          </td>
+          <td class="column-actions">
+            <button class="edit" (click)="abrirModal(transacao)">editar</button>
+            <button class="delete" (click)="apagarTransacao(transacao.id!)">apagar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-edit-modal 
+  *ngIf="exibirModal" 
+  [transacao]="transacaoParaEditar" 
+  (update)="atualizarTransacao($event)" 
+  (close)="fecharModal()">
+</app-edit-modal> 

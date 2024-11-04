@@ -1,0 +1,131 @@
+h2 {
+    color: #3f51b5;
+  }
+  
+  h3 {
+    color: #3f51b5; 
+  }
+
+  .about {
+    text-align: justify;
+    margin-left: 20px;
+    max-width: 95%;
+    line-height: 1.5;
+  }
+
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    margin: 10px;
+    padding: 10px;
+
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin: 15px auto; 
+    max-width: 1200px; 
+  }
+
+  .input {
+    width: 70%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+    background-color: #f9f9f9; 
+    pointer-events: none; /* Desabilita a interação */
+    color: #666; 
+  }
+  
+  /* Simulação de cadastro */
+  .input-simulation {
+    background-color: #f3f4f6; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px; 
+    flex: 1; /* Permite que a seção cresça para ocupar espaço disponível */
+    min-width: 300px; 
+  }
+
+  
+  /* Estilo do extrato */
+  .extrato-simulation {
+    background-color: #f3f4f6; /* Cor de fundo clara para o extrato */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px; /* Margem em torno da seção */
+    flex: 1; /* Permite que a seção cresça para ocupar espaço disponível */
+    min-width: 300px; /* Largura mínima para evitar que fique muito estreita */
+  }
+  
+  /* Estilo dos itens do extrato */
+  .extrato-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9; /* Fundo claro para cada item do extrato */
+  }
+  
+ 
+  
+  .despesa .valor {
+    color: red; /* Despesas em vermelho */
+  }
+  
+  .receita .valor {
+    color: green; /* Receitas em verde */
+  }
+  
+  /* Estilo do botão */
+  .submit-button {
+    background-color: #3f51b5; /* Cor roxa */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Botão ocupa 100% da largura */
+  }
+  
+  .submit-button:hover {
+    background-color: #4a148c; /* Cor mais escura ao passar o mouse */
+  }
+  
+  /* Media queries para responsividade */
+  @media (max-width: 768px) {
+    .input-simulation,
+    .extrato-simulation {
+      padding: 15px; /* Menos padding em telas menores */
+    }
+
+    .about {
+      max-width: 80%;
+    }
+  
+    .container {
+      flex-direction: column; /* Muda para coluna em telas pequenas */
+    }
+  
+    .extrato-item {
+      flex-direction: column; /* Exibir itens em coluna em telas pequenas */
+      align-items: flex-start; /* Alinhar à esquerda */
+    }
+  
+    .extrato-item div {
+      width: 100%; /* Itens ocupam 100% da largura */
+      margin-bottom: 5px; /* Espaçamento entre itens */
+    }
+
+    .input-simulation{
+      width: 80%;
+    }
+
+    .extrato-simulation{
+      width: 80%;
+    }
+  }

@@ -1,0 +1,50 @@
+<h3 class="about">Sobre a aplicação</h3>
+
+<p class="about">
+  Uma aplicação <strong>responsiva</strong> (Experimente usar o seu navegador no modo mobile), desenvolvida em <strong>PHP (backend)</strong> e <strong>Angular (frontend)</strong> usando <strong>MySQL</strong> para persistência de dados para registrar suas transações financeiras e ver seu extrato com todas as suas transações realizadas com opção de filtragem, de uma forma
+  simples e rápida.
+</p>
+
+<p class="about">
+  <strong>Abaixo segue instruções para uso.</strong>
+</p>
+
+<div class="container">
+    <div class="input-simulation">
+      <h3>Cadastro de Transações</h3>
+      <p><strong>Navegar para a Página de Cadastro:</strong> Clique na opção "Cadastrar Novas Transações" na navbar.</p>
+      <p><strong>Preencher o Formulário:</strong></p>
+      
+      <div class="input-field">
+        <label>Descrição:</label>
+        <div class="input">Ex: Compra de supermercado</div>
+      </div>
+      <div class="input-field">
+        <label>Valor:</label>
+        <div class="input">Ex: 150.00</div>
+      </div>  
+      
+      <p><strong>Salvar a Transação:</strong> Clique no botão abaixo para cadastrar a transação.</p>
+      <button class="submit-button">Cadastrar Transação</button>
+    </div>
+  
+    <div class="extrato-simulation">
+      <h3>Visualização do Extrato</h3>
+      <p><strong>O extrato exibe uma lista de todas as transações cadastradas, permitindo que você acompanhe suas finanças:</strong></p>
+      <div class="extrato-item despesa">
+        <div class="descricao">Supermercado</div>
+        <div class="valor">- R$ 150,00</div>
+        <div class="data">01/11/2023</div>
+      </div>
+      <div class="extrato-item receita">
+        <div class="descricao">Conta de água</div>
+        <div class="valor">+ R$ 3.000,00</div>
+        <div class="data">30/10/2023</div>
+      </div>
+      <div class="extrato-item despesa">
+        <div class="descricao">Conta de luz</div>
+        <div class="valor">- R$ 100,00</div>
+        <div class="data">25/10/2023</div>
+      </div>
+    </div>
+  </div>

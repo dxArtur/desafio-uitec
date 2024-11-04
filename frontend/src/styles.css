@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    width: 100vw; /* Define a largura do body como 100% da viewport */
+}
+
+ul {
+    padding: 0;
+}
