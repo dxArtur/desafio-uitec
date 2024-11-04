@@ -69,12 +69,34 @@ Laragon é um ambiente de desenvolvimento leve e rápido para aplicações PHP. 
      ```bash
       php artisan serve
 
-php artisan serve
-
 ## Pronto, seu projeto backend já está rodando, facil né?
 
 5. **Acesse Seu Projeto**:
-   - Abra um navegador e vá para `http://seu-projeto.test` (o Laragon cria automaticamente domínios locais).
+   - Abra um navegador e vá para `http://backend.test` (o Laragon cria automaticamente domínios locais).
 
-[Em dúvidas da instalação veja essse](https://www.youtube.com/watch?v=biSRp8riEG0&ab_channel=ClubeFull-Stack)
+     [Em dúvidas da instalação veja essse vídeo](https://www.youtube.com/watch?v=XbgzvUL14mY&ab_channel=NodeStudioTreinamentos)
+     [Em dúvidas da instalação veja essse vídeo](https://www.youtube.com/watch?v=Re1dE15t9to&ab_channel=NodeStudioTreinamentos)
+
+## Agora o frontend
+
+   - Abra um terminal na pasta frontend do repositório baixado atraves do git clone
+   - no terminal para baixar as dependencias execute:
+      ```bash
+      npm install
+   - em seguida execute, para iniciar o servidor:
+      ```bash
+      ng serve
+
+## Pronto, o frontend já está rodando em:  **`http://localhost:4200/`**
+  
+*Agora visite nossa documentação para testar e entender o funcionamento da nossa api, em:*
+<br>
+   `http://localhost:4200/documentation` ou `http://backend.test/api/documentation`
+ <br>
+  * para ambos o servidor backend precisa estar ligado.*
+
+
+
+
+
 
