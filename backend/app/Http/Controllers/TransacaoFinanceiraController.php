@@ -68,7 +68,15 @@ class TransacaoFinanceiraController extends Controller
             'tipo_transacao_id' => 'required|exists:tipo_transacao_financeira,id',
         ]);
 
-        $transacao = TransacaoFinanceira::create($request->all());
+        $tipoTransacao = $request->tipo_transacao_id;
+        $valor = $request->valor;
+
+        if ($tipoTransacao === 2) {// 2 seria o ID para 'Despesa'
+            $valor = -abs($valor);
+        }
+
+        $transacao = TransacaoFinanceira::create(array_merge($request->all(), ['valor' => $valor]));
+
         return response()->json($transacao, 201);
     }
 
@@ -125,7 +133,15 @@ class TransacaoFinanceiraController extends Controller
             'tipo_transacao_id' => 'exists:tipo_transacao_financeira,id',
         ]);
 
-        $transacao->update($request->all());
+        $tipoTransacao = $request->tipo_transacao_id ?? $transacao->tipo_transacao_id;
+        $valor = $request->valor ?? $transacao->valor;
+
+        if ($tipoTransacao === 2) { //2 seria o ID para 'Despesa'
+            $valor = -abs($valor);
+        }
+
+        $transacao->update(array_merge($request->all(), ['valor' => $valor]));
+
         return response()->json($transacao);
     }
 
