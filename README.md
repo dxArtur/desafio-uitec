@@ -74,7 +74,7 @@ Laragon é um ambiente de desenvolvimento leve e rápido para aplicações PHP. 
    - Abra um navegador e vá para `http://backend.test` (o Laragon cria automaticamente domínios locais).
 
      [Em dúvidas da instalação veja essse vídeo](https://www.youtube.com/watch?v=XbgzvUL14mY&ab_channel=NodeStudioTreinamentos)
-     [Em dúvidas da instalação veja essse vídeo](https://www.youtube.com/watch?v=Re1dE15t9to&ab_channel=NodeStudioTreinamentos)
+     [Em dúvidas sobre o banco de dados veja essse vídeo](https://www.youtube.com/watch?v=Re1dE15t9to&ab_channel=NodeStudioTreinamentos)
 
 ## Agora o frontend
 
