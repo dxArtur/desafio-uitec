@@ -92,7 +92,7 @@ Laragon é um ambiente de desenvolvimento leve e rápido para aplicações PHP. 
 <br>
    `http://localhost:4200/documentation` ou `http://backend.test/api/documentation`
  <br>
-  * para ambos o servidor backend precisa estar ligado.*
+  * para ambos o servidor backend precisa estar ligado.
 
 
 
